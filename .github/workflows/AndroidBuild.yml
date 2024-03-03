@@ -27,3 +27,4 @@ jobs:
         with:
           name: Insta-Todo.apk
           path: app/build/outputs/apk/debug/app-debug.apk
+
