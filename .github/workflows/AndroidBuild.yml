@@ -1,9 +1,10 @@
-Name: AndroidBuild
+name: AndroidBuild
+
 on:
   pull_request:
-    branches: [ master ]
+    branches: [master]
   push:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
@@ -19,10 +20,11 @@ jobs:
           distribution: 'adopt'
 
       - name: Build with Gradle
-        uses: ./graldew build
+        run: ./gradlew build
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.3.1
         with:
-          name:Insta-Todo.apk
-          path:app/builds/outputs/apk/app-debug.apk
+          name: Insta-Todo.apk
+          path: app/build/outputs/apk/debug/app-debug.apk
+
