@@ -4,6 +4,7 @@ plugins {
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
     id ("com.google.devtools.ksp")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -97,6 +98,9 @@ dependencies {
     implementation("androidx.paging:paging-runtime-ktx:$paging_version")
     //Coil
     implementation("io.coil-kt:coil:1.1.1")
+    //Firebase
+    implementation(platform("com.google.firebase:firebase-bom:32.7.4"))
+    implementation("com.google.firebase:firebase-analytics")
 
 }
 kapt {
