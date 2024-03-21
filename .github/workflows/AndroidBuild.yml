@@ -1,7 +1,7 @@
 name: AndroidBuild
 
 on:
-  push:
+  pull_request:
     branches:
       - main
 
@@ -19,12 +19,10 @@ jobs:
           distribution: 'adopt'
 
       - name: Build with Gradle
-        run: ./gradlew assembleRelease
+        run: ./gradlew build
 
-      - name: Distribute to Firebase
-        uses: wzieba/Firebase-Distribution-Github-Action@v1
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v4.3.1
         with:
-          appId: ${{ secrets.FIREBASE_APP_ID }}
-          token: ${{ secrets.FIREBASE_TOKEN }}
-          groups: 'Testers'
-          file: app/build/outputs/apk/release/app-release-unsigned.apk
+          name: Insta-Todo.apk
+          path: app/build/outputs/apk/debug/app-debug.apk
