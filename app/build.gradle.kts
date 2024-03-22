@@ -15,7 +15,7 @@ android {
         applicationId = "com.araa.insta_todo"
         minSdk = 24
         targetSdk = 34
-        versionCode = 100001
+        versionCode = 100002
         versionName = "1.0.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
