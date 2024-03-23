@@ -16,13 +16,13 @@ import androidx.compose.ui.unit.dp
 
 
 @Composable
-fun UIButton(onClick: () -> Unit) {
+fun UIButton(title: String, onClick: () -> Unit) {
     Button(
         onClick = onClick,
         modifier = Modifier
             .padding(16.dp)
     ) {
-        Text(text = "Click me", textAlign = TextAlign.Start)
+        Text(text = title, textAlign = TextAlign.Start)
     }
 }
 
@@ -33,6 +33,6 @@ fun PreviewButton() {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = androidx.compose.foundation.layout.Arrangement.Center
     ) {
-        UIButton(onClick = { })
+        UIButton("title", onClick = { })
     }
 }
