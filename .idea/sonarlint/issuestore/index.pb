@@ -38,5 +38,3 @@ m
 ..github/workflows/AndroidBuildPushFirebase.yml,a/5/a56d438f66d6892b9870e64aeaf176bf76858f48
 R
 ".github/workflows/AndroidBuild.yml,f/c/fc200a2ae306aec1e8358ee69d526b51ed25c0e1
-f
-6app/src/main/java/com/araa/insta_todo/data/Resource.kt,9/f/9fef95f270ffa92348610a37fb2acb7eaca72ea6

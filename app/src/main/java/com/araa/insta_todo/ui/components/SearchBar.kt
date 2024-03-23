@@ -1,16 +1,16 @@
 package com.araa.insta_todo.ui.components
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Surface
 import androidx.compose.material3.TextField
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Shapes
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextFieldColors
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -29,7 +29,7 @@ fun SearchBar(
 ) {
     Surface(
         modifier = modifier.fillMaxWidth(),
-        color = Color.LightGray,
+        color = MaterialTheme.colorScheme.background,
     ) {
         Row(
             modifier = Modifier
@@ -62,12 +62,18 @@ fun SearchTextField(
     TextField(
         modifier = modifier,
         value = textState.value,
+        colors = TextFieldDefaults.colors(
+            focusedContainerColor = Color.Transparent,
+            unfocusedIndicatorColor = Color.Transparent,
+            disabledIndicatorColor = Color.Transparent
+        ),
         onValueChange = {
             textState.value = it
             onSearch(it.text)
         },
         placeholder = { Text("Search") },
         singleLine = true,
+        shape = MaterialTheme.shapes.medium
     )
 }
 
